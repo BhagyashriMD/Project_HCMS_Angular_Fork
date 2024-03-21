@@ -1,0 +1,156 @@
+<p>add employee components work !</p>
+<form (submit)="addEmployee()">
+  <div class="col-md-4">
+    <label for="firstName" class="form-label">FIRST NAME</label>
+    <input type="text" class="form-control" id="firstName" [(ngModel)]="employee.firstName" name="firstName">
+  </div>
+
+  <div class="col-md-4">
+    <label for="lastName" class="form-label">LAST NAME</label>
+    <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.lastName" name="lastName">
+  </div>
+
+  <div class="col-md-4">
+    <label for="gender">GENDER</label>
+    <select id="gender" class="form-control" name="gender" [(ngModel)]="employee.gender">
+      <option selected>Choose...</option>
+      <option>MAN</option>
+      <option>WOMAN</option>
+      <option>TRANSGENDER</option>
+    </select>
+  </div>
+
+  <div class="col-md-4">
+    <label for="dateOfBirth" class="form-label"> DATE OF BIRTH</label>
+    <input type="text" class="form-control" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="employee.dateOfBirth">
+  </div>
+
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+
+  <div class="col-md-4">
+    <label for="email" class="form-label">EMAIL </label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="employee.email">
+  </div>
+
+  <div class="col-md-4">
+    <label for="phone" class="form-label"> PHONE NUMBER</label>
+    <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="employee.phone">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="address" class="form-label">ADDRESS </label>
+    <input type="text" class="form-control" id="address" name="address" [(ngModel)]="employee.address">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="nationalId" class="form-label"> NATIONAL ID</label>
+    <input type="text" class="form-control" id="nationalId" name="nationalId" [(ngModel)]="employee.nationalId">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="maritalStatus">MARIIAL STATUS</label>
+    <select id="maritalStatus" class="form-control" name="maritalStatus" [(ngModel)]="employee.maritalStatus">
+      <option selected>Choose...</option>
+      <option ngF>SINGLE</option>
+      <option>MARRIED</option>
+      <option>DIVORCED</option>
+    </select>
+  </div>
+
+  <div class="col-md-4">
+    <label for="department">DEPARTMENT</label>
+    <select id="department" class="form-control" name="department" [(ngModel)]="departmentName">
+      <option selected>Choose...</option>
+      <option *ngFor="let dept of departments">{{dept.departmentId }} {{dept.departmentName }}</option>
+    </select>
+  </div>
+
+  <div class="col-md-4">
+    <label for="role">ROLE</label>
+    <select id="role" class="form-control" name="role" [(ngModel)]="roleName">
+      <option selected>Choose...</option>
+      <option *ngFor="let role of roles">{{role.roleId }} {{role.roleName }}</option>
+    </select>
+  </div>
+
+  <div class="col-md-4">
+    <label for="manager">MANAGER</label>
+    <select id="manager" class="form-control" name="manager" [(ngModel)]="empManagerName">
+      <option selected>Choose...</option>
+      <option *ngFor="let empManager of employees">{{empManager.employeeId }} {{empManager.firstName }}
+        {{empManager.lastName }}</option>
+    </select>
+  </div>
+
+
+
+  <div class="col-md-4">
+    <label for="emergencyContactName" class="form-label">EMERGENCY CONTACT NAME</label>
+    <input type="text" class="form-control" id="emergencyContactName" name="emergencyContactName"
+      [(ngModel)]="employee.emergencyContactName">
+  </div>
+
+  <div class="col-md-4">
+    <label for="emergencyContactPhone" class="form-label">EMERGENCY CONTACT PHONE</label>
+    <input type="text" class="form-control" id="emergencyContactPhone" name="emergencyContactPhone"
+      [(ngModel)]="employee.emergencyContactPhone">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="position" class="form-label">POSITION</label>
+    <input type="text" class="form-control" id="position" name="position" [(ngModel)]="employee.position">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="skillSet" class="form-label">SKILL SET</label>
+    <input type="text" class="form-control" id="skillSet" name="skillSet" [(ngModel)]="employee.skillSet">
+  </div>
+
+  <div class="col-md-4">
+    <label for="employmentStartDate" class="form-label"> EMPLOYMENT START DATE</label>
+    <input type="text" class="form-control" id="employmentStartDate" name="employmentStartDate"
+      [(ngModel)]="employee.employmentStartDate">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="employmentEndDate" class="form-label"> EMPLOYMENT END DATE</label>
+    <input type="text" class="form-control" id="employmentEndDate" name="employmentEndDate"
+      [(ngModel)]="employee.employmentEndDate">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="salary" class="form-label"> SALARY</label>
+    <input type="text" class="form-control" id="salary" name="salary" [(ngModel)]="employee.salary">
+  </div>
+
+  <div class="col-md-4">
+    <label for="employmentStatus">EMPLOYMENT STATUS</label>
+    <select id="employmentStatus" class="form-control" name="employmentStatus" [(ngModel)]="employee.employmentStatus">
+      <option selected>Choose...</option>
+      <option>ACTIVE</option>
+      <option>INACTIVE</option>
+    </select>
+  </div>
+
+  <div class="col-md-4">
+    <label for="bankAccountNumber" class="form-label">BANK ACCOUNT NUMBER </label>
+    <input type="text" class="form-control" id="bankAccountNumber" name="bankAccountNumber"
+      [(ngModel)]="employee.bankAccountNumber">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
