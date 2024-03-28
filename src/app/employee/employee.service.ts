@@ -7,7 +7,7 @@ import { Employee } from './employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private baseUrl = 'http://localhost:8080/AbstractProject_01';
+  private baseUrl = 'http://localhost:8080/Project_HCMS_Backend';
   private apiUrl = this.baseUrl + '/employees/';
 
   httpOptions = {

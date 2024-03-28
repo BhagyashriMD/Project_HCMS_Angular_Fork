@@ -10,7 +10,7 @@ import { Projects } from './projects';
 })
 export class ProjectsService {
 
-  private baseUrl = 'http://localhost:8080/AbstractProject_01';
+  private baseUrl = 'http://localhost:8080/Project_HCMS_Backend';
   private apiUrl = this.baseUrl + '/projects/';
 
   httpOptions = {

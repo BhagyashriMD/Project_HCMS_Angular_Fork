@@ -1,1 +1,66 @@
 <p>edit-projects works!</p>
+<div class="container">
+    <h1 class="text-center">UPDATE PROJECT</h1>
+    <a href="#" routerLink="/projects/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="projectId">PROJECT ID</label>
+            <input type="text" id="projectId" formControlName="projectId" [(ngModel)]="updatedProject.projectId"
+                class="form-control" [readOnly]="true">
+        </div>
+
+        <div class="form-group">
+            <label for="projectName">PROJECT NAME</label>
+            <input type="text" id="projectName" formControlName="projectName" [(ngModel)]="updatedProject.projectName"
+                class="form-control">
+            <div *ngIf="formControl['projectName'].touched && formControl['projectName'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['projectName'].errors && formControl['projectName'].errors['required']">Project
+                    Name is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="projectDescription">PROJECT DESCRIPTION</label>
+            <input type="text" id="projectDescription" formControlName="projectDescription"
+                [(ngModel)]="updatedProject.projectDescription" class="form-control">
+            <div *ngIf="formControl['projectDescription'].touched && formControl['projectDescription'].invalid"
+                class="alert alert-danger">
+                <div
+                    *ngIf="formControl['projectDescription'].errors && formControl['projectDescription'].errors['required']">
+                    project Description
+                    is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="startDate">START DATE</label>
+            <p><strong>{{ updatedProject.startDate}}</strong></p>
+            <input type="date" id="startDate" formControlName="startDate" [(ngModel)]="updatedProject.startDate"
+                class="form-control">
+            <div *ngIf="formControl['startDate'].touched && formControl['startDate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['startDate'].errors && formControl['startDate'].errors['required']">Project
+                    Start Date is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="endDate">END DATE</label>
+            <input type="date" id="endDate" formControlName="endDate" [(ngModel)]="updatedProject.endDate"
+                class="form-control">
+            <div *ngIf="formControl['endDate'].touched && formControl['endDate'].invalid" class="alert alert-danger">
+                <div *ngIf="formControl['endDate'].errors && formControl['endDate'].errors['required']">Project
+                    End Date is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status">STATUS</label>
+            <input type="text" id="status" formControlName="status" [(ngModel)]="updatedProject.status"
+                class="form-control">
+            <div *ngIf="formControl['status'].touched && formControl['status'].invalid" class="alert alert-danger">
+                <div *ngIf="formControl['status'].errors && formControl['status'].errors['required']">Project
+                    Name is Required </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">UPDATE PROJECT</button>
+    </form>
+</div>

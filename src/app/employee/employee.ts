@@ -3,7 +3,7 @@ import { Role } from "../roles/role";
 
 
 export interface Employee {
-    employeeId: number;
+    employeeId?: number;
     firstName: string;
     lastName: string;
     gender: string;

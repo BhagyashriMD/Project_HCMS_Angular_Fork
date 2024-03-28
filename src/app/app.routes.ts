@@ -10,15 +10,20 @@ import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.co
 
 
 export const routes: Routes = [
+     // main route - > index page - main page - first page - DASHBAORD
+    { path: '', redirectTo: '/employees', pathMatch: 'full' },
+
+    //employee
     { path: 'employees/list', component: EmployeeListComponent },
     { path: 'employees/:employeeId/view', component: EmployeeDetailsComponent },
     { path: 'employees/add', component: AddEmployeeComponent },
     { path: 'employees/edit', component: EditEmployeeComponent },
-    { path: '', redirectTo: '/employees', pathMatch: 'full' },
+    { path: 'employees', redirectTo: '/employees/list', pathMatch: 'full' },
+   
     // projects
     { path: 'projects/list', component: ProjectsListComponent },
     { path: 'projects/add', component: AddProjectsComponent },
-    { path: 'projects/update', component: EditProjectsComponent },
+    { path: 'projects/edit', component: EditProjectsComponent },
     { path: 'projects/:projectId/view', component: ViewProjectDetailsComponent },
     { path: 'projects', redirectTo: '/projects/list', pathMatch: 'full' },
 

@@ -1,1 +1,35 @@
 <p>view-project-details works!</p>
+
+<div class="container">
+    <a href="#" routerLink="/projects/add" class="btn btn-success">CREATE PROJECT</a>
+    <a href="#" routerLink="/projects/list" class="btn btn-secondary">VIEW PROJECTS List</a>
+    <div>
+        <strong>PROJECT ID : </strong>
+        <p>{{project.projectId}}</p>
+    </div>
+
+    <div>
+        <strong>PROJECT NAME : </strong>
+        <p>{{project.projectName}}</p>
+    </div>
+    <div>
+        <strong>PROJECT DESCRIPTION : </strong>
+        <p>{{project.projectDescription}}</p>
+    </div>
+    <div>
+        <strong>PROJECT START DATE : </strong>
+        <p>{{project.startDate | date:'dd-MM-yyyy' }}</p>
+    </div>
+
+    <div *ngIf="project.endDate">
+        <strong>PROJECT END DATE : </strong>
+        <p>{{project.endDate}}</p>
+    </div>
+
+    <div>
+        <strong>PROJECT STATUS : </strong>
+        <p>{{project.status}}</p>
+    </div>
+
+
+</div>
